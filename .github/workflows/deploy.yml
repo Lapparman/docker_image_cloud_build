@@ -5,7 +5,7 @@ on:
       - master
       
 env:
-  IMAGE_NAME: tweet_app_el
+  IMAGE_NAME: tweet_app_reyhan
   REGION: us-central1
       
 jobs:
@@ -37,4 +37,4 @@ jobs:
           docker tag $IMAGE_NAME:latest gcr.io/${{ secrets.PROJECT_ID }}/$IMAGE_NAME:latest
           docker push gcr.io/${{ secrets.PROJECT_ID }}/$IMAGE_NAME:latest
       - name: Deploy to CloudRUn
-        run: gcloud run deploy tweet-app-el --image gcr.io/${{ secrets.PROJECT_ID }}/$IMAGE_NAME:latest --platform managed --region $REGION --port 80 --allow-unauthenticated
+        run: gcloud run deploy tweet-app-reyhan --image gcr.io/${{ secrets.PROJECT_ID }}/$IMAGE_NAME:latest --platform managed --region $REGION --port 80 --allow-unauthenticated
